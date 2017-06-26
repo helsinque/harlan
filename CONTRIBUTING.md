@@ -1,170 +1,135 @@
-## Contributing
+[![N|Solid](https://avatars3.githubusercontent.com/u/7250733?v=3&s=200)](https://avatars3.githubusercontent.com/u/7250733?v=3&s=200)
+## Contribuindo para o Harlan
 
-First off, thank you for considering contributing to Active Admin. It's people
-like you that make Active Admin such a great tool.
+[![N|Solid](https://www.harlan.com.br/images/android/drawable-ldpi/ic_launcher.png)](https://www.harlan.com.br/images/android/drawable-ldpi/ic_launcher.png)
 
-### 1. Where do I go from here?
+Em primeiro lugar, obrigado por considerar contribuir com o Harlan. São pessoas
+Como você que faz do Harlan uma ótima ferramenta.
+ Estas são principalmente diretrizes, e não regras. Use seu melhor julgamento e sinta-se à vontade para propor mudanças neste documento em um pedido de pull request.
 
-If you've noticed a bug or have a question that doesn't belong on the
-[mailing list](http://groups.google.com/group/activeadmin) or
-[Stack Overflow](http://stackoverflow.com/questions/tagged/activeadmin),
-[search the issue tracker](https://github.com/activeadmin/activeadmin/issues?q=something)
-to see if someone else in the community has already created a ticket.
-If not, go ahead and [make one](https://github.com/activeadmin/activeadmin/issues/new)!
+### 1. Por onde começar?
 
-### 2. Fork & create a branch
+Se você notou um erro ou tem uma pergunta que não pertence ao Harlan
+[Lista de correspondência] (http://groups.google.com/group/bipbop) ou
+[Telegram] (https://web.telegram.org/#/im?p=c1130342554_15285734564282464304),
+[Procure o rastreador de problemas] (https://github.com/bipbop/harlan/issues?q=something)
+Para ver se outra pessoa na comunidade já criou um ticket.
+Se não, vá em frente e [crie um](https://github.com/bipbop/harlan/issues/new)!
 
-If this is something you think you can fix, then
-[fork Active Admin](https://help.github.com/articles/fork-a-repo)
-and create a branch with a descriptive name.
+### 2. Fork & create uma branch
 
-A good branch name would be (where issue #325 is the ticket you're working on):
+Caso neste projeto, você acha que pode consertar, contribuir ou aprimorar então
+[Fork Harlan] (https://help.github.com/articles/fork-a-repo)
+E crie um ramo com um nome descritivo.
 
-```sh
-git checkout -b 325-add-japanese-translations
-```
-
-### 3. Get the test suite running
-
-Make sure you're using a recent ruby and have the `bundler` gem installed, at
-least version `1.14.3`.
-
-Select the Gemfile for your preferred Rails version, preferably the latest:
+Um bom nome de branch seria (onde o número 159 é o issue no qual você está trabalhando):
 
 ```sh
-export BUNDLE_GEMFILE=gemfiles/rails_51.gemfile
+git checkout -b 325-add-american-translations
 ```
+------
+## Dependências
 
-Now install the development dependencies:
+Tentamos não reinventar a roda, então o Harlan é construído com outros projetos de código aberto:
+
+Tool                  | Description
+--------------------- | -----------
+[NodeJs]             | Uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis
+[Compass]            | O Compass é um framework de estilos de estilo Sass que simplifica a criação e manutenção de CSS.
+[Bower]              | O Bower pode gerenciar componentes que contêm HTML, CSS, JavaScript, fontes ou até mesmo arquivos de imagem.
+[Async]               | O Async é um módulo de utilitário que fornece straight-forward.
+[babel]              | Powerful, transpiler
+[Gulp]               | Um conjunto de ferramentas para automatizar tarefas dolorosas ou demoradas em seu fluxo de trabalho de desenvolvimento, para que você possa parar de mexer e construir algo.
+
+[Async]: https://caolan.github.io/async/
+[babel]: https://babeljs.io
+[Bower]: https://bower.io/
+[Compass]: https://rubygems.org/gems/compass/versions
+[NodeJs]: https://nodejs.org/en/
+[Gulp]: http://gulpjs.com/
+
+----------
+### 3. Instalação
+
+Agora, instale as dependências de desenvolvimento:
+
+Para realizar o deploy do Harlan será necessário que você tenha instalado um ambiente que conte com NodeJS, Compass e Bower.
+
+# apt-get install nodejs bundler
 
 ```sh
-bundle install
+$npm install
+$bower install
+$npm build
 ```
 
-Now you should be able to run the entire suite using:
+Agora você deve poder executar o conjunto inteiro usando:
 
 ```sh
-bundle exec rake
+$gulp
 ```
 
-The test run will generate a sample Rails application in `spec/rails` to run the
-tests against.
+A execução deste comando tem como objetivo complilar todos módulos e subir um servidor em: http://localhost:3000
 
-If your tests are passing locally but they're failing on Travis, reset your test
-environment:
+Se ocorrer falha ao subir o servidor verifique o log de exeução da ferramenta Gulp para verificar possível falha em carregar uma dependência.
+
+### 4. Veja suas alterações de forma automatica
+
+Através da tarefa do Gulp [watch] é possível desenvolver de forma prática e rapida sem a necessidade de atualizações manuais, pois o Harlan utiliza a tecnologia "browser-sync" para buscar um melhor desempenho de desenvolvimento. 
+
+#### 5. Você encontrou um bug?
+
+* ** Verifique se o bug já não foi relatado ** pesquisando no GitHub sob [Issues](https://github.com/bipbop/harlan/issues).
+
+* Se você não consegue encontrar um problema aberto abordando o problema,[open a new one](https://github.com/bipbop/harlan/new). 
+Certifique-se de incluir um título ** e uma descrição clara **, tanta informação relevante quanto possível,
+E um ** exemplo de código ** ou um ** caso de teste executável ** demonstrando o comportamento esperado que não está ocorrendo.
+
+* Se possível, use os modelos de relatório de erros relevantes para criar o problema.
+Simplesmente copie o conteúdo do modelo apropriado em um arquivo .rb, faça as alterações necessárias para demonstrar o problema,
+E ** colar o conteúdo na descrição do problema **:
+  * [**Halan  1** issues](https://github.com/harlan/master/lib/bug_report_templates/rails_5_master.rb)
+
+### 6. Implementar sua correção ou recurso
+
+Neste ponto, você está pronto para fazer suas mudanças! Sinta-se à vontade para pedir ajuda;
+Todos são iniciantes no início: smile_cat:
+
+### 7. Crie um Pull Request
+
+Neste ponto, você deve voltar para sua branch master e certificar-se de que é
+Atualizado com a brach masster do Harlan:
 
 ```sh
-rm -rf spec/rails && bundle update
-```
-
-#### 4. Did you find a bug?
-
-* **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/activeadmin/activeadmin/issues).
-
-* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/activeadmin/activeadmin/issues/new). 
-Be sure to include a **title and clear description**, as much relevant information as possible, 
-and a **code sample** or an **executable test case** demonstrating the expected behavior that is not occurring.
-
-* If possible, use the relevant bug report templates to create the issue. 
-Simply copy the content of the appropriate template into a .rb file, make the necessary changes to demonstrate the issue, 
-and **paste the content into the issue description**:
-  * [**Rails 5** issues](https://github.com/activeadmin/activeadmin/blob/master/lib/bug_report_templates/rails_5_master.rb)
-
-### 5. Implement your fix or feature
-
-At this point, you're ready to make your changes! Feel free to ask for help;
-everyone is a beginner at first :smile_cat:
-
-### 6. View your changes in a Rails application
-
-Active Admin is meant to be used by humans, not cucumbers. So make sure to take
-a look at your changes in a browser.
-
-To boot up a test Rails app:
-
-```sh
-bundle exec rake local server
-```
-
-This will automatically create a Rails app if none already exists, and store it
-in the `.test-rails-apps` folder.
-
-You should now be able to open <http://localhost:3000/admin> in your browser.
-You can log in using:
-
-```
-User: admin@example.com
-Password: password
-```
-
-If you need to perform any other commands on the test application, just pass
-them to the `local` rake task. For example, to boot the rails console:
-
-```sh
-bundle exec rake local console
-```
-
-Or to migrate the database:
-
-```sh
-bundle exec rake local db:migrate
-```
-
-### 7. Make a Pull Request
-
-At this point, you should switch back to your master branch and make sure it's
-up to date with Active Admin's master branch:
-
-```sh
-git remote add upstream git@github.com:activeadmin/activeadmin.git
+git remote add upstream git@github.com:harlan/harlan.git
 git checkout master
 git pull upstream master
 ```
 
-Then update your feature branch from your local copy of master, and push it!
+Em seguida, atualize sua branch de recursos da sua cópia local do master e push it!
 
 ```sh
-git checkout 325-add-japanese-translations
+git checkout 159-add-american-translations
 git rebase master
-git push --set-upstream origin 325-add-japanese-translations
+git push --set-upstream origin 159-add-american-translations
 ```
 
-Finally, go to GitHub and
-[make a Pull Request](https://help.github.com/articles/creating-a-pull-request)
+Finalmente, vá para GitHub e
+[make a Pull Request](https://help.github.com/harlan/creating-a-pull-request)
 :D
+### 8. Mantendo seu pedido de solicitação atualizada
 
-Travis CI will run our test suite against all supported Rails versions. We care
-about quality, so your PR won't be merged until all tests pass. It's unlikely,
-but it's possible that your changes pass tests in one Rails version but fail in
-another. In that case, you'll have to setup your development environment (as
-explained in step 3) to use the problematic Rails version, and investigate
-what's going on!
+Se um mantenedor pede que você "rebase" seu PR, eles estão dizendo que muitos códigos
+Mudou, e que você precisa atualizar sua brach, por isso é mais fácil de mesclar.
 
-### 8. Keeping your Pull Request updated
-
-If a maintainer asks you to "rebase" your PR, they're saying that a lot of code
-has changed, and that you need to update your branch so it's easier to merge.
-
-To learn more about rebasing in Git, there are a lot of
+Para saber mais sobre rebasing no Git, há um monte de
 [good](http://git-scm.com/book/en/Git-Branching-Rebasing)
 [resources](https://help.github.com/articles/interactive-rebase),
 but here's the suggested workflow:
 
 ```sh
-git checkout 325-add-japanese-translations
+git checkout 159-add-american-translations
 git pull --rebase upstream master
-git push --force-with-lease 325-add-japanese-translations
+git push --force-with-lease 159-add-american-translations
 ```
 
-### 9. Merging a PR (maintainers only)
-
-A PR can only be merged into master by a maintainer if:
-
-* It is passing CI.
-* It has been approved by at least two maintainers. If it was a maintainer who
-  opened the PR, only one extra approval is needed.
-* It has no requested changes.
-* It is up to date with current master.
-
-Any maintainer is allowed to merge a PR if all of these conditions are
-met.
