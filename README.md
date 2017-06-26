@@ -20,6 +20,22 @@ Cada consulta salva é permanentemente atualizada, isto é, sempre que você con
 
 O Harlan é uma plataforma open-source distribuída sobre a licença MIT, o código fonte e maiores informações podem ser encontradas no nosso repositório de código [Bitbucket](https://bitbucket.org/bipbop/harlan). Ser uma plataforma livre significa que se você é desenvolvedor pode criar módulos e APIs para o sistema para atender demandas específicas, ganhando dinheiro com isso.
 
+
+O [Guia contribuição](https://github.com/helsinque/harlan/blob/master/CONTRIBUTING.md)
+É um bom lugar para começar. Se você tiver dúvidas, não hesite em perguntar.
+
+## Dependências
+
+Tentamos não reinventar a roda, então o Active Admin é construído com outros projetos de código aberto:
+
+Tool                  | Description
+--------------------- | -----------
+[Async]               | Async is a utility module which provides straight-forward.
+[babel]              | Powerful, transpiler
+
+[Async]: https://www.npmjs.com/package/async
+[babel]: https://babeljs.io
+
 ----------
 
 ### Suporte
